@@ -31,9 +31,9 @@ let reset = "reset"
     console.log("Let's reset your password!")
   }  //if guess doesn't match answer
 else if (paramguess !== parampassword && paramguess !== reset && paramguess !== forgot){
-  console.log("Wrong, try again!")
+  console.log("Wrong, try again!")//guessed incorrectly
 }else if (paramguess === paramanswer){
-  console.log("Access granted!")
+  console.log("Access granted!")//guessed correctly
 }
   //write your code herere
 }

@@ -19,27 +19,28 @@ CHALLENGE (SAVE FOR LAST):
 */
 
 //determine a proper function name and parameter variable name
+//ScoreChecker for grades
 function ScoreChecker(paramscore, paramname){
-  const name=paramname
+  let name= paramname
   if(paramscore >= 86){ 
-    console.log('Congrats, '+name+' got an A!')
+    console.log('Congrats! '+name+' got an A!')//user got above 86
   }else if (paramscore < 86 && paramscore >=75){
-    console.log("Great job! "+name+" got a B.")
+    console.log("Great job! "+name+" got a B.")//user got between 86 - 75
   }else if (paramscore < 75 && paramscore >= 60){
-    console.log("Good effort! "+name+" got a C.")
-  }else if(paramscore >60 && paramscore >= 50){
-    console.log("Needs improvement. "+name+" got a D.")
-  }else if (paramscore >50){
-    console.log("Fail. "+name+" got an F.")
+    console.log("Good effort! "+name+" got a C.")//user got between 74 - 60
+  }else if(paramscore <60 && paramscore >= 50){
+    console.log("Needs improvement. "+name+" got a D.")//user got between 59 - 50
+  }else if (paramscore <50){
+    console.log("Fail. "+name+" got an F.")//user got below 50
   }
   //write your code here
 }
 
 function StartApp(){
   readline.question("What's your name?", name => {
-    readline.question('Please provide your exam score percentage', score => {
-      ScoreChecker(name);
-      ScoreChecker(Number(score));
+    readline.question('Please provide your exam score percentage?', score => {  
+        //ask name, then what the grade was
+      ScoreChecker(Number(score));//takes in the number grade
       //call your function here.
 
       // readline.close();
@@ -53,3 +54,5 @@ function StartApp(){
 }
 
 StartApp();
+//gather user name and number grade to determine what their letter grade is
+//based on number inputted, user will recieve corresponding letter grade

@@ -33,7 +33,6 @@ function ScoreChecker(paramscore, paramname){
   }else if (paramscore <50){
     console.log("Fail. "+name+" got an F.")//user got below 50
   }
-  //write your code here
 }
 
 function StartApp(){
@@ -41,9 +40,7 @@ function StartApp(){
     readline.question('Please provide your exam score percentage?', score => {  
         //ask name, then what the grade was
       ScoreChecker(Number(score));//takes in the number grade
-      //call your function here.
-
-      // readline.close();
+ 
       if(score !== "quit"){
         StartApp();
       } else {

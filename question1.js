@@ -18,23 +18,22 @@ CHALLENGE (SAVE FOR LATER)
 - the password set needs to be 5 characters or more, if it is below 5 characters, display "Password is inadequate"
 */
 
-
+//Password guessing game
 //determine a proper function name and parameter variable name
 function PasswordGame(paramguess, parampassword){
 let forgot = "forgot"
 let reset = "reset"
-  //if guess = answer
-  if (paramguess === parampassword){
-    console.log("Access granted!");
 //if guess is "forgot"
-  }else if(paramguess === forgot && paramguess !== parampassword){
+  if(paramguess === forgot && paramguess !== parampassword){
     console.log("Here's a hint")
   }//if guess is "reset"
   else if (paramguess === reset && paramguess !== parampassword){
     console.log("Let's reset your password!")
   }  //if guess doesn't match answer
-else if (paramguess !== parampassword){
+else if (paramguess !== parampassword && paramguess !== reset && paramguess !== forgot){
   console.log("Wrong, try again!")
+}else if (paramguess === paramanswer){
+  console.log("Access granted!")
 }
   //write your code herere
 }
@@ -52,7 +51,7 @@ function StartApp(){
       // readline.close();
       if(paramguess === "quit"){
         readline.close();
-      } else {
+      }else {
         StartApp();
       }
     });

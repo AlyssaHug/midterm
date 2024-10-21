@@ -39,10 +39,10 @@ function StartApp(){
             LunchMoneyChecker(Number(parammoney));
             LunchMoneyChecker(Number(paramcost));
     
-          if(paramcost !== "quit"){
-            StartApp();
-          } else {
+          if(paramcost === "quit"){
             readline.close();
+          } else {
+            StartApp();
           }
         })
       })

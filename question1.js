@@ -35,7 +35,7 @@ else if (paramguess !== parampassword && paramguess !== reset && paramguess !== 
 }else if (paramguess === paramanswer){
   console.log("Access granted!")//guessed correctly
 }
-  //write your code herere
+
 }
 
 //CHALLENGE FUNCTION
@@ -46,9 +46,6 @@ function StartApp(){
     readline.question("Now guess, what's the password?", paramguess => {
       PasswordGame(paramguess);
         
-      //call your function here.
-
-      // readline.close();
       if(paramguess === "quit"){
         readline.close();
       }else {

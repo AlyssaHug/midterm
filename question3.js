@@ -21,28 +21,25 @@ CHALLENGE (SAVE FOR LAST):
 */
 
 //determine a proper function name and parameter variable name
-function LunchMoneyChecker(param, parammoney, paramitem, paramcost){
-  let item=paramitem
-  let name=paramname
-if (money < cost){
-  console.log(+paramname+" doesn't have enough money to buy "+item+".")
-}else if(money > cost){
-  console.log(+paramname+" purchased "+item+".")
+//LunchMoneyChecker that compares how much money you have to what an item costs
+//compare to see if you have enough money
+function LunchMoneyChecker( paramname, parammoney, paramitem, paramcost){
+if(parammoney >= paramcost){ 
+  console.log("Yay! " +paramname+' purchased '+paramitem+".");//user has enough money for their item
+}else if (parammoney < paramcost){
+  console.log("Sorry, "+paramname+" doesn't have enough money to buy "+paramitem+".")//user doesn't have enough money for their item
 }
-  //write your code here
 }
 
 function StartApp(){
-  readline.question('What is your name?', name => {
-    readline.question('How much money do you have today?', parammoney => {
-      readline.question('What are you wanting to buy?', paramitem => {
-        readline.question('How much does it cost?', paramcost => {
+  readline.question('What is your name?', paramname => {// User's name
+    readline.question('How much money do you have today?', parammoney => {//how much money user has to spend
+      readline.question('What are you wanting to buy?', paramitem => {//what user wants to buy
+        readline.question('How much does it cost?', paramcost => {//how much item costs
             LunchMoneyChecker(Number(parammoney));
             LunchMoneyChecker(Number(paramcost));
-          //call your function here.
-
-          // readline.close();
-          if(cost !== "quit"){
+    
+          if(paramcost !== "quit"){
             StartApp();
           } else {
             readline.close();
@@ -54,3 +51,5 @@ function StartApp(){
 }
 
 StartApp();
+//Ask user for name, balance, item of interest, and cost of item
+//based on user input, it will let them know if they have enough money for their item of choice
